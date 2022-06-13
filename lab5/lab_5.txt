@@ -1,0 +1,307 @@
+md5sum Disk_Image_ID-20210327.001
+0adf1f182aab391d7042133bb55cf832  Disk_Image_ID-20210327.001
+
+sha1sum Disk_Image_ID-20210327.001
+36186d7abc2ab6dfb783f0283e96566db8c0b31c  Disk_Image_ID-20210327.001
+
+
+Disk Disk_Image_ID-20210327.001: 30 GiB, 32212254720 bytes, 62914560 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x8afa8be3
+
+fdisk -l Disk_Image_ID-20210327.001
+Device                       Boot    Start      End  Sectors  Size Id Type
+Disk_Image_ID-20210327.001p1 *        2048   104447   102400   50M  7 HPFS/NTFS/
+Disk_Image_ID-20210327.001p2        104448 61890501 61786054 29.5G  7 HPFS/NTFS/
+Disk_Image_ID-20210327.001p3      61890560 62910463  1019904  498M 27 Hidden NTF
+
+fsstat -o 2048 Disk_Image_ID-20210327.001 
+
+FILE SYSTEM INFORMATION
+--------------------------------------------
+File System Type: NTFS
+Volume Serial Number: 18EC42BBEC4292C4
+OEM Name: NTFS    
+Volume Name: System Reserved
+Version: Windows XP
+
+METADATA INFORMATION
+--------------------------------------------
+First Cluster of MFT: 4266
+First Cluster of MFT Mirror: 2
+Size of MFT Entries: 1024 bytes
+Size of Index Records: 4096 bytes
+Range: 0 - 256
+Root Directory: 5
+
+CONTENT INFORMATION
+--------------------------------------------
+Sector Size: 512
+Cluster Size: 4096
+Total Cluster Range: 0 - 12798
+Total Sector Range: 0 - 102398
+
+$AttrDef Attribute Values:
+$STANDARD_INFORMATION (16)   Size: 48-72   Flags: Resident
+$ATTRIBUTE_LIST (32)   Size: No Limit   Flags: Non-resident
+$FILE_NAME (48)   Size: 68-578   Flags: Resident,Index
+$OBJECT_ID (64)   Size: 0-256   Flags: Resident
+$SECURITY_DESCRIPTOR (80)   Size: No Limit   Flags: Non-resident
+$VOLUME_NAME (96)   Size: 2-256   Flags: Resident
+$VOLUME_INFORMATION (112)   Size: 12-12   Flags: Resident
+$DATA (128)   Size: No Limit   Flags: 
+$INDEX_ROOT (144)   Size: No Limit   Flags: Resident
+$INDEX_ALLOCATION (160)   Size: No Limit   Flags: Non-resident
+$BITMAP (176)   Size: No Limit   Flags: Non-resident
+$REPARSE_POINT (192)   Size: 0-16384   Flags: Non-resident
+$EA_INFORMATION (208)   Size: 8-8   Flags: Resident
+$EA (224)   Size: 0-65536   Flags: 
+$LOGGED_UTILITY_STREAM (256)   Size: 0-65536   Flags: Non-resident
+
+fsstat -o 104448 Disk_Image_ID-20210327.001
+
+FILE SYSTEM INFORMATION
+--------------------------------------------
+File System Type: NTFS
+Volume Serial Number: E8DE4350DE4315EA
+OEM Name: NTFS    
+Version: Windows XP
+
+METADATA INFORMATION
+--------------------------------------------
+First Cluster of MFT: 786432
+First Cluster of MFT Mirror: 2
+Size of MFT Entries: 1024 bytes
+Size of Index Records: 4096 bytes
+Range: 0 - 226304
+Root Directory: 5
+
+CONTENT INFORMATION
+--------------------------------------------
+Sector Size: 512
+Cluster Size: 4096
+Total Cluster Range: 0 - 7723255
+Total Sector Range: 0 - 61786052
+
+$AttrDef Attribute Values:
+$STANDARD_INFORMATION (16)   Size: 48-72   Flags: Resident
+$ATTRIBUTE_LIST (32)   Size: No Limit   Flags: Non-resident
+$FILE_NAME (48)   Size: 68-578   Flags: Resident,Index
+$OBJECT_ID (64)   Size: 0-256   Flags: Resident
+$SECURITY_DESCRIPTOR (80)   Size: No Limit   Flags: Non-resident
+$VOLUME_NAME (96)   Size: 2-256   Flags: Resident
+$VOLUME_INFORMATION (112)   Size: 12-12   Flags: Resident
+$DATA (128)   Size: No Limit   Flags: 
+$INDEX_ROOT (144)   Size: No Limit   Flags: Resident
+$INDEX_ALLOCATION (160)   Size: No Limit   Flags: Non-resident
+$BITMAP (176)   Size: No Limit   Flags: Non-resident
+$REPARSE_POINT (192)   Size: 0-16384   Flags: Non-resident
+$EA_INFORMATION (208)   Size: 8-8   Flags: Resident
+$EA (224)   Size: 0-65536   Flags: 
+$LOGGED_UTILITY_STREAM (256)   Size: 0-65536   Flags: Non-resident
+
+sudo losetup --partscan --find --show --read-only Disk_Image_ID-20210327.001
+Mounta se disk
+
+
+
+
+Regripper - parsiranje Registry files
+
+System timezone:
+rip.pl -r SYSTEM -p timezone
+
+Launching timezone v.20200518
+timezone v.20200518
+(System) Get TimeZoneInformation key contents
+
+TimeZoneInformation key
+ControlSet001\Control\TimeZoneInformation
+LastWrite Time 2021-03-21 20:03:44Z
+  DaylightName   -> @tzres.dll,-211
+  StandardName   -> @tzres.dll,-212
+  Bias           -> 480 (8 hours)
+  ActiveTimeBias -> 420 (7 hours)
+  TimeZoneKeyName-> Pacific Standard Time
+
+Operativni sustav:
+rip.pl -r SOFTWARE -p winver
+Launching winver v.20200525
+winver v.20200525
+(Software) Get Windows version & build info
+
+ProductName               Windows 10 Home     
+ReleaseID                 2009                
+BuildLab                  19041.vb_release.191206-1406
+BuildLabEx                19041.1.amd64fre.vb_release.191206-1406
+CompositionEditionID      Core                
+RegisteredOrganization                        
+RegisteredOwner           Kamryn              
+InstallDate               2021-03-10 00:04:29Z
+InstallTime               2021-03-10 00:04:29Z
+
+Ime sustava:
+rip.pl -r SYSTEM -p compname 
+Launching compname v.20090727
+compname v.20090727
+(System) Gets ComputerName and Hostname values from System hive
+
+ComputerName    = DESKTOP-E4SUNT2
+TCP/IP Hostname = DESKTOP-E4SUNT2
+
+Accounti na računalu:
+rip.pl -r SAM -p samparse | grep -E 'Username|Created|Date' --color=none
+Launching samparse v.20200825
+Username        : Administrator [500]
+Account Created : 2021-03-10 03:04:01Z
+Last Login Date : 2020-09-27 14:54:30Z
+Pwd Reset Date  : Never
+Pwd Fail Date   : Never
+Username        : Guest [501]
+Account Created : 2021-03-10 03:04:01Z
+Last Login Date : Never
+Pwd Reset Date  : Never
+Pwd Fail Date   : Never
+Username        : DefaultAccount [503]
+Account Created : 2021-03-10 03:04:01Z
+Last Login Date : Never
+Pwd Reset Date  : Never
+Pwd Fail Date   : Never
+Username        : WDAGUtilityAccount [504]
+Account Created : 2021-03-10 03:04:01Z
+Last Login Date : Never
+Pwd Reset Date  : 2020-09-27 14:50:45Z
+Pwd Fail Date   : Never
+Username        : Kamryn [1002]
+Account Created : 2021-03-10 00:13:56Z
+Last Login Date : 2021-03-21 20:04:35Z
+Pwd Reset Date  : 2021-03-10 00:13:56Z
+Pwd Fail Date   : 2021-03-10 00:21:18Z
+
+Zadnji login:
+rip.pl -r SOFTWARE -p lastloggedon
+Launching lastloggedon v.20200517
+lastloggedon v.20200517
+(Software) Gets LastLoggedOn* values from LogonUI key
+
+LastLoggedOn
+Microsoft\Windows\CurrentVersion\Authentication\LogonUI
+LastWrite: 2021-03-21 20:04:35Z
+
+LastLoggedOnUser    = .\Kamryn
+LastLoggedOnSAMUser = .\Kamryn
+LastLoggedOnUserSID = S-1-5-21-1987397543-1106735666-2059573275-1002
+
+Zadnji put ugašeno računalo:
+rip.pl -r SYSTEM -p shutdown
+Launching shutdown v.20200518
+shutdown v.20200518
+(System) Gets ShutdownTime value from System hive
+
+ControlSet001\Control\Windows key, ShutdownTime value
+LastWrite time: 2021-03-10 00:49:11Z
+ShutdownTime  : 2021-03-10 00:49:11Z
+
+Što je korisnik zadnje otvorio:
+rip.pl -r NTUSER.DAT -p recentdocs                                             130 ⨯
+Launching recentdocs v.20200427
+recentdocs v.20200427
+(NTUSER.DAT) Gets contents of user's RecentDocs key
+
+RecentDocs
+**All values printed in MRUList\MRUListEx order.
+Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
+LastWrite Time: 2021-03-27 14:25:45Z
+  20 = Torrent-Sources
+  19 = Contraband.mp3
+  15 = Captures
+  18 = ID-20210327.raw
+  13 = Torrents
+  17 = Contraband.mp3.torrent
+  16 = ms-gamingoverlay:///
+  0 = kglcheck/
+  14 = ID-20210321.raw
+  12 = Sample-1.mp3.torrent
+  4 = Reference
+  8 = List-2.txt
+  7 = List-1.txt
+  11 = Downloads
+  10 = Sample-1.mp3
+  9 = List-3.txt
+  6 = This PC
+  5 = Documents
+  3 = Pictures
+  2 = wallpaperflare.com_wallpaper.jpg
+  1 = The Internet
+
+Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.jpg
+LastWrite Time 2021-03-21 20:20:49Z
+MRUListEx = 0
+  0 = wallpaperflare.com_wallpaper.jpg
+
+Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.mp3
+LastWrite Time 2021-03-27 14:25:45Z
+MRUListEx = 1,0
+  1 = Contraband.mp3
+  0 = Sample-1.mp3
+
+Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.raw
+LastWrite Time 2021-03-27 14:21:21Z
+MRUListEx = 1,0
+  1 = ID-20210327.raw
+  0 = ID-20210321.raw
+
+Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.torrent
+LastWrite Time 2021-03-27 14:10:00Z
+MRUListEx = 1,0
+  1 = Contraband.mp3.torrent
+  0 = Sample-1.mp3.torrent
+
+Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.txt
+LastWrite Time 2021-03-21 20:41:44Z
+MRUListEx = 1,0,2
+  1 = List-2.txt
+  0 = List-1.txt
+  2 = List-3.txt
+
+Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\Folder
+LastWrite Time 2021-03-27 14:25:45Z
+MRUListEx = 7,6,5,3,4,2,1,0
+  7 = Torrent-Sources
+  6 = Captures
+  5 = Torrents
+  3 = Reference
+  4 = Downloads
+  2 = This PC
+  1 = Pictures
+  0 = The Internet
+
+
+Kreiranje liste file-ova i direktorija na danoj particiji: 
+fls -o 2048 Disk_Image_ID-20210327.001 -r -l -p -z PST >> file_dir.csv
+
+Traženje torrent aplikacija grep -F '.exe' file_dir.csv | grep -i 'torrent' | cut -f 1,2,4,5
+r/r 205974-128-3:	Users/Kamryn/AppData/Roaming/uTorrent/helper/helper.exe	2021-03-27 14:02:54 (UTC)	2021-03-21 20:40:17 (UTC)
+r/r 205783-128-4:	Users/Kamryn/AppData/Roaming/uTorrent/updates/3.5.5_45852/utorrentie.exe	2021-03-27 14:02:53 (UTC)	2021-03-21 20:39:53 (UTC)
+r/r 158784-128-1:	Users/Kamryn/AppData/Roaming/uTorrent/updates/3.5.5_45852.exe	2021-03-21 16:59:06 (UTC)	2021-03-21 20:39:08 (UTC)
+r/r 205967-128-4:	Users/Kamryn/AppData/Roaming/uTorrent/updates/3.5.5_45966.exe	2021-03-21 20:40:19 (UTC)	2021-03-21 20:40:17 (UTC)
+r/r 205772-128-3:	Users/Kamryn/AppData/Roaming/uTorrent/uTorrent.exe	2021-03-27 14:04:01 (UTC)	2021-03-21 20:39:08 (UTC)
+r/r 97182-128-4:	Users/Kamryn/Desktop/uTorrent.exe	2021-03-27 14:04:10 (UTC)2021-03-21 20:37:28 (UTC)
+r/r 97182-128-7:	Users/Kamryn/Desktop/uTorrent.exe:SmartScreen	2021-03-27 14:04:10 (UTC)	2021-03-21 20:37:28 (UTC)
+
+Traženje mp3 datoteka grep -F '.mp3' file_dir.csv | grep -F 'torrent' | cut -f 1,2,4,5
+r/r 79927-128-4:	Users/Kamryn/AppData/Roaming/uTorrent/Contraband.mp3.torrent	2021-03-27 14:10:14 (UTC)	2021-03-27 14:10:14 (UTC)
+r/r 79927-128-5:	Users/Kamryn/AppData/Roaming/uTorrent/Contraband.mp3.torrent:Zone.Identifier	2021-03-27 14:10:14 (UTC)	2021-03-27 14:10:14 (UTC)
+r/r 206281-128-1:	Users/Kamryn/AppData/Roaming/uTorrent/Sample-1.mp3.torrent	2021-03-21 20:42:39 (UTC)	2021-03-21 20:42:39 (UTC)
+r/r 55634-128-4:	Users/Kamryn/Downloads/Torrents/Contraband.mp3.torrent	2021-03-27 14:10:00 (UTC)	2021-03-27 14:10:11 (UTC)
+r/r 55634-128-5:	Users/Kamryn/Downloads/Torrents/Contraband.mp3.torrent:Zone.Identifier	2021-03-27 14:10:00 (UTC)	2021-03-27 14:10:11 (UTC)
+r/r 206280-128-4:	Users/Kamryn/Downloads/Torrents/Sample-1.mp3.torrent	2021-03-21 20:42:39 (UTC)	2021-03-21 20:52:23 (UTC)
+
+
+echo -e 'File Type and Metadata\tName\tLast Modified\tLast Accessed\tLast Changed\tCreated' >> file_dir_mod.csv
+cat file_dir.csv >> file_dir_mod.csv
+
+
